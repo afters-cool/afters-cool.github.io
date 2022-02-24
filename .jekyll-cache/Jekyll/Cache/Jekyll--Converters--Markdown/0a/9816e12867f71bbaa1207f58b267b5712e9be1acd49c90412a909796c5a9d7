@@ -1,0 +1,259 @@
+I"UG<h1 id="scratch-gui">scratch-gui</h1>
+<h4 id="scratch-gui-is-a-set-of-react-components-that-comprise-the-interface-for-creating-and-running-scratch-30-projects">Scratch GUI is a set of React components that comprise the interface for creating and running Scratch 3.0 projects</h4>
+
+<h2 id="installation">Installation</h2>
+<p>This requires you to have Git and Node.js installed.</p>
+
+<p>In your own node environment/application:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>https://github.com/LLK/scratch-gui.git
+</code></pre></div></div>
+<p>If you want to edit/play yourself:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/LLK/scratch-gui.git
+<span class="nb">cd </span>scratch-gui
+npm <span class="nb">install</span>
+</code></pre></div></div>
+
+<p><strong>You may want to add <code class="language-plaintext highlighter-rouge">--depth=1</code> to the <code class="language-plaintext highlighter-rouge">git clone</code> command because there are some <a href="https://github.com/LLK/scratch-gui/issues/5140">large files in the git repository history</a>.</strong></p>
+
+<h2 id="getting-started">Getting started</h2>
+<p>Running the project requires Node.js to be installed.</p>
+
+<h2 id="running">Running</h2>
+<p>Open a Command Prompt or Terminal in the repository and run:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm start
+</code></pre></div></div>
+<p>Then go to <a href="http://localhost:8601/">http://localhost:8601/</a> - the playground outputs the default GUI component</p>
+
+<h2 id="developing-alongside-other-scratch-repositories">Developing alongside other Scratch repositories</h2>
+
+<h3 id="getting-another-repo-to-point-to-this-code">Getting another repo to point to this code</h3>
+
+<p>If you wish to develop <code class="language-plaintext highlighter-rouge">scratch-gui</code> alongside other scratch repositories that depend on it, you may wish
+to have the other repositories use your local <code class="language-plaintext highlighter-rouge">scratch-gui</code> build instead of fetching the current production
+version of the scratch-gui that is found by default using <code class="language-plaintext highlighter-rouge">npm install</code>.</p>
+
+<p>Here’s how to link your local <code class="language-plaintext highlighter-rouge">scratch-gui</code> code to another project’s <code class="language-plaintext highlighter-rouge">node_modules/scratch-gui</code>.</p>
+
+<h4 id="configuration">Configuration</h4>
+
+<ol>
+  <li>In your local <code class="language-plaintext highlighter-rouge">scratch-gui</code> repository’s top level:
+    <ol>
+      <li>Make sure you have run <code class="language-plaintext highlighter-rouge">npm install</code></li>
+      <li>Build the <code class="language-plaintext highlighter-rouge">dist</code> directory by running <code class="language-plaintext highlighter-rouge">BUILD_MODE=dist npm run build</code></li>
+      <li>Establish a link to this repository by running <code class="language-plaintext highlighter-rouge">npm link</code></li>
+    </ol>
+  </li>
+  <li>From the top level of each repository (such as <code class="language-plaintext highlighter-rouge">scratch-www</code>) that depends on <code class="language-plaintext highlighter-rouge">scratch-gui</code>:
+    <ol>
+      <li>Make sure you have run <code class="language-plaintext highlighter-rouge">npm install</code></li>
+      <li>Run <code class="language-plaintext highlighter-rouge">npm link scratch-gui</code></li>
+      <li>Build or run the repository</li>
+    </ol>
+  </li>
+</ol>
+
+<h4 id="using-npm-run-watch">Using <code class="language-plaintext highlighter-rouge">npm run watch</code></h4>
+
+<p>Instead of <code class="language-plaintext highlighter-rouge">BUILD_MODE=dist npm run build</code>, you can use <code class="language-plaintext highlighter-rouge">BUILD_MODE=dist npm run watch</code> instead. This will watch for changes to your <code class="language-plaintext highlighter-rouge">scratch-gui</code> code, and automatically rebuild when there are changes. Sometimes this has been unreliable; if you are having problems, try going back to <code class="language-plaintext highlighter-rouge">BUILD_MODE=dist npm run build</code> until you resolve them.</p>
+
+<h4 id="oh-no-it-didnt-work">Oh no! It didn’t work!</h4>
+
+<p>If you can’t get linking to work right, try:</p>
+<ul>
+  <li>Follow the recipe above step by step and don’t change the order. It is especially important to run <code class="language-plaintext highlighter-rouge">npm install</code> <em>before</em> <code class="language-plaintext highlighter-rouge">npm link</code> as installing after the linking will reset the linking.</li>
+  <li>Make sure the repositories are siblings on your machine’s file tree, like <code class="language-plaintext highlighter-rouge">.../.../MY_SCRATCH_DEV_DIRECTORY/scratch-gui/</code> and <code class="language-plaintext highlighter-rouge">.../.../MY_SCRATCH_DEV_DIRECTORY/scratch-www/</code>.</li>
+  <li>Consistent node.js version: If you have multiple Terminal tabs or windows open for the different Scratch repositories, make sure to use the same node version in all of them.</li>
+  <li>If nothing else works, unlink the repositories by running <code class="language-plaintext highlighter-rouge">npm unlink</code> in both, and start over.</li>
+</ul>
+
+<h2 id="testing">Testing</h2>
+<h3 id="documentation">Documentation</h3>
+
+<p>You may want to review the documentation for <a href="https://facebook.github.io/jest/docs/en/api.html">Jest</a> and <a href="http://airbnb.io/enzyme/docs/api/">Enzyme</a> as you write your tests.</p>
+
+<p>See <a href="https://facebook.github.io/jest/docs/en/cli.html#content">jest cli docs</a> for more options.</p>
+
+<h3 id="running-tests">Running tests</h3>
+
+<p><em>NOTE: If you’re a Windows user, please run these scripts in Windows <code class="language-plaintext highlighter-rouge">cmd.exe</code>  instead of Git Bash/MINGW64.</em></p>
+
+<p>Before running any tests, make sure you have run <code class="language-plaintext highlighter-rouge">npm install</code> from this (scratch-gui) repository’s top level.</p>
+
+<h4 id="main-testing-command">Main testing command</h4>
+
+<p>To run linter, unit tests, build, and integration tests, all at once:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">test</span>
+</code></pre></div></div>
+
+<h4 id="running-unit-tests">Running unit tests</h4>
+
+<p>To run unit tests in isolation:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run <span class="nb">test</span>:unit
+</code></pre></div></div>
+
+<p>To run unit tests in watch mode (watches for code changes and continuously runs tests):</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run <span class="nb">test</span>:unit <span class="nt">--</span> <span class="nt">--watch</span>
+</code></pre></div></div>
+
+<p>You can run a single file of integration tests (in this example, the <code class="language-plaintext highlighter-rouge">button</code> tests):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="si">$(</span>npm bin<span class="si">)</span>/jest <span class="nt">--runInBand</span> <span class="nb">test</span>/unit/components/button.test.jsx
+</code></pre></div></div>
+
+<h4 id="running-integration-tests">Running integration tests</h4>
+
+<p>Integration tests use a headless browser to manipulate the actual HTML and javascript that the repo
+produces. You will not see this activity (though you can hear it when sounds are played!).</p>
+
+<p>Note that integration tests require you to first create a build that can be loaded in a browser:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run build
+</code></pre></div></div>
+
+<p>Then, you can run all integration tests:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run <span class="nb">test</span>:integration
+</code></pre></div></div>
+
+<p>Or, you can run a single file of integration tests (in this example, the <code class="language-plaintext highlighter-rouge">backpack</code> tests):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="si">$(</span>npm bin<span class="si">)</span>/jest <span class="nt">--runInBand</span> <span class="nb">test</span>/integration/backpack.test.js
+</code></pre></div></div>
+
+<p>If you want to watch the browser as it runs the test, rather than running headless, use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">USE_HEADLESS</span><span class="o">=</span>no <span class="si">$(</span>npm bin<span class="si">)</span>/jest <span class="nt">--runInBand</span> <span class="nb">test</span>/integration/backpack.test.js
+</code></pre></div></div>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="ignoring-optional-dependencies">Ignoring optional dependencies</h3>
+
+<p>When running <code class="language-plaintext highlighter-rouge">npm install</code>, you can get warnings about optional dependencies:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm WARN optional Skipping failed optional dependency /chokidar/fsevents:
+npm WARN notsup Not compatible with your operating system or architecture: fsevents@1.2.7
+</code></pre></div></div>
+
+<p>You can suppress them by adding the <code class="language-plaintext highlighter-rouge">no-optional</code> switch:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install --no-optional
+</code></pre></div></div>
+
+<p>Further reading: <a href="https://stackoverflow.com/questions/36725181/not-compatible-with-your-operating-system-or-architecture-fsevents1-0-11">Stack Overflow</a></p>
+
+<h3 id="resolving-dependencies">Resolving dependencies</h3>
+
+<p>When installing for the first time, you can get warnings that need to be resolved:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm WARN eslint-config-scratch@5.0.0 requires a peer of babel-eslint@^8.0.1 but none was installed.
+npm WARN eslint-config-scratch@5.0.0 requires a peer of eslint@^4.0 but none was installed.
+npm WARN scratch-paint@0.2.0-prerelease.20190318170811 requires a peer of react-intl-redux@^0.7 but none was installed.
+npm WARN scratch-paint@0.2.0-prerelease.20190318170811 requires a peer of react-responsive@^4 but none was installed.
+</code></pre></div></div>
+
+<p>You can check which versions are available:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm view react-intl-redux@0.* version
+</code></pre></div></div>
+
+<p>You will need to install the required version:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install  --no-optional --save-dev react-intl-redux@^0.7
+</code></pre></div></div>
+
+<p>The dependency itself might have more missing dependencies, which will show up like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>user@machine:~/sources/scratch/scratch-gui (491-translatable-library-objects)$ npm install  --no-optional --save-dev react-intl-redux@^0.7
+scratch-gui@0.1.0 /media/cuideigin/Linux/sources/scratch/scratch-gui
+├── react-intl-redux@0.7.0
+└── UNMET PEER DEPENDENCY react-responsive@5.0.0
+</code></pre></div></div>
+
+<p>You will need to install those as well:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install  --no-optional --save-dev react-responsive@^5.0.0
+</code></pre></div></div>
+
+<p>Further reading: <a href="https://stackoverflow.com/questions/46602286/npm-requires-a-peer-of-but-all-peers-are-in-package-json-and-node-modules">Stack Overflow</a></p>
+
+<h2 id="troubleshooting-1">Troubleshooting</h2>
+
+<p>If you run into npm install errors, try these steps:</p>
+<ol>
+  <li>run <code class="language-plaintext highlighter-rouge">npm cache clean --force</code></li>
+  <li>Delete the node_modules directory</li>
+  <li>Delete package-lock.json</li>
+  <li>run <code class="language-plaintext highlighter-rouge">npm install</code> again</li>
+</ol>
+
+<h2 id="publishing-to-github-pages">Publishing to GitHub Pages</h2>
+<p>You can publish the GUI to github.io so that others on the Internet can view it.
+<a href="https://github.com/LLK/scratch-gui/wiki/Publishing-to-GitHub-Pages">Read the wiki for a step-by-step guide.</a></p>
+
+<h2 id="understanding-the-project-state-machine">Understanding the project state machine</h2>
+
+<p>Since so much code throughout scratch-gui depends on the state of the project, which goes through many different phases of loading, displaying and saving, we created a “finite state machine” to make it clear which state it is in at any moment. This is contained in the file src/reducers/project-state.js .</p>
+
+<p>It can be hard to understand the code in src/reducers/project-state.js . There are several types of data and functions used, which relate to each other:</p>
+
+<h3 id="loading-states">Loading states</h3>
+
+<p>These include state constant strings like:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">NOT_LOADED</code> (the default state),</li>
+  <li><code class="language-plaintext highlighter-rouge">ERROR</code>,</li>
+  <li><code class="language-plaintext highlighter-rouge">FETCHING_WITH_ID</code>,</li>
+  <li><code class="language-plaintext highlighter-rouge">LOADING_VM_WITH_ID</code>,</li>
+  <li><code class="language-plaintext highlighter-rouge">REMIXING</code>,</li>
+  <li><code class="language-plaintext highlighter-rouge">SHOWING_WITH_ID</code>,</li>
+  <li><code class="language-plaintext highlighter-rouge">SHOWING_WITHOUT_ID</code>,</li>
+  <li>etc.</li>
+</ul>
+
+<h3 id="transitions">Transitions</h3>
+
+<p>These are names for the action which causes a state change. Some examples are:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">START_FETCHING_NEW</code>,</li>
+  <li><code class="language-plaintext highlighter-rouge">DONE_FETCHING_WITH_ID</code>,</li>
+  <li><code class="language-plaintext highlighter-rouge">DONE_LOADING_VM_WITH_ID</code>,</li>
+  <li><code class="language-plaintext highlighter-rouge">SET_PROJECT_ID</code>,</li>
+  <li><code class="language-plaintext highlighter-rouge">START_AUTO_UPDATING</code>,</li>
+</ul>
+
+<h3 id="how-transitions-relate-to-loading-states">How transitions relate to loading states</h3>
+
+<p>Like this diagram of the project state machine shows, various transition actions can move us from one loading state to another:</p>
+
+<p><img src="docs/project_state_diagram.svg" alt="Project state diagram" /></p>
+
+<p><em>Note: for clarity, the diagram above excludes states and transitions relating to error handling.</em></p>
+
+<h4 id="example">Example</h4>
+
+<p>Here’s an example of how states transition.</p>
+
+<p>Suppose a user clicks on a project, and the page starts to load with URL https://scratch.mit.edu/projects/123456 .</p>
+
+<p>Here’s what will happen in the project state machine:</p>
+
+<p><img src="/img/posts/scratch-gui/project_state_example.png" alt="Project state example" /></p>
+
+<ol>
+  <li>When the app first mounts, the project state is <code class="language-plaintext highlighter-rouge">NOT_LOADED</code>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">SET_PROJECT_ID</code> redux action is dispatched (from src/lib/project-fetcher-hoc.jsx), with <code class="language-plaintext highlighter-rouge">projectId</code> set to <code class="language-plaintext highlighter-rouge">123456</code>. This transitions the state from <code class="language-plaintext highlighter-rouge">NOT_LOADED</code> to <code class="language-plaintext highlighter-rouge">FETCHING_WITH_ID</code>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">FETCHING_WITH_ID</code> state. In src/lib/project-fetcher-hoc.jsx, the <code class="language-plaintext highlighter-rouge">projectId</code> value <code class="language-plaintext highlighter-rouge">123456</code> is used to request the data for that project from the server.</li>
+  <li>When the server responds with the data, src/lib/project-fetcher-hoc.jsx dispatches the <code class="language-plaintext highlighter-rouge">DONE_FETCHING_WITH_ID</code> action, with <code class="language-plaintext highlighter-rouge">projectData</code> set. This transitions the state from <code class="language-plaintext highlighter-rouge">FETCHING_WITH_ID</code> to <code class="language-plaintext highlighter-rouge">LOADING_VM_WITH_ID</code>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">LOADING_VM_WITH_ID</code> state. In src/lib/vm-manager-hoc.jsx, we load the <code class="language-plaintext highlighter-rouge">projectData</code> into Scratch’s virtual machine (“the vm”).</li>
+  <li>When loading is done, src/lib/vm-manager-hoc.jsx dispatches the <code class="language-plaintext highlighter-rouge">DONE_LOADING_VM_WITH_ID</code> action. This transitions the state from <code class="language-plaintext highlighter-rouge">LOADING_VM_WITH_ID</code> to <code class="language-plaintext highlighter-rouge">SHOWING_WITH_ID</code></li>
+  <li>The <code class="language-plaintext highlighter-rouge">SHOWING_WITH_ID</code> state. Now the project appears normally and is playable and editable.</li>
+</ol>
+
+<h2 id="donate">Donate</h2>
+<p>We provide <a href="https://scratch.mit.edu">Scratch</a> free of charge, and want to keep it that way! Please consider making a <a href="https://secure.donationpay.org/scratchfoundation/">donation</a> to support our continued engineering, design, community, and resource development efforts. Donations of any size are appreciated. Thank you!</p>
+
+:ET
