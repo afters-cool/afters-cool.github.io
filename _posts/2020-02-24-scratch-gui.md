@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Scratch GUI"
-subtitle: "Kaggle ipython notebook export test"
+subtitle: "github repo readme test"
 background: '/img/posts/scratch-gui/Scratchlogo.svg'
 ---
 
