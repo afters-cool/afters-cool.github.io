@@ -240,7 +240,7 @@ These are names for the action which causes a state change. Some examples are:
 
 Like this diagram of the project state machine shows, various transition actions can move us from one loading state to another:
 
-![Project state diagram](/img/posts/scratch-gui/project_state_diagram.svg)
+<img src="/img/posts/scratch-gui/project_state_diagram.svg" width="100%">
 
 _Note: for clarity, the diagram above excludes states and transitions relating to error handling._
 
@@ -252,7 +252,7 @@ Suppose a user clicks on a project, and the page starts to load with URL https:/
 
 Here's what will happen in the project state machine:
 
-![Project state example](/img/posts/scratch-gui/project_state_example.png)
+<img src="/img/posts/scratch-gui/project_state_example.png" width="100%">
 
 1. When the app first mounts, the project state is `NOT_LOADED`.
 2. The `SET_PROJECT_ID` redux action is dispatched (from src/lib/project-fetcher-hoc.jsx), with `projectId` set to `123456`. This transitions the state from `NOT_LOADED` to `FETCHING_WITH_ID`.
