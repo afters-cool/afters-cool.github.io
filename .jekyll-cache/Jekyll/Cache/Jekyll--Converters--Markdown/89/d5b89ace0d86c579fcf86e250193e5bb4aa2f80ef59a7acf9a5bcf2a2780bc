@@ -1,7 +1,0 @@
-I"§<h1 id="hello-seaborn-kaggle-notebook-export-test">Hello-Seaborn Kaggle notebook export test</h1>
-
-<p>Download a Kaggle notebook as <code class="language-plaintext highlighter-rouge">ipython</code> format -&gt; run in visual studio -&gt; export as html -&gt; embed into this post.</p>
-
-<h2 id="hello-seaborn">Hello-Seaborn</h2>
-<iframe src="/img/posts/hello-seaborn/hello-seaborn.html" height="100%" width="100%"></iframe>
-:ET
