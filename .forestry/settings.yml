@@ -5,10 +5,12 @@ admin_path:
 webhook_url: 
 sections:
 - type: document
+  path: _data/navigation.yml
+  label: Navigation Menu
+  match: "**/*"
+- type: document
   path: _data/general_settings.yml
   label: General Settings
-  match: "**/*"
-  read_only: false
 - type: jekyll-pages
   label: Pages
   create: all
