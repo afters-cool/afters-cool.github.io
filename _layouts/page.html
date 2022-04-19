@@ -2,33 +2,29 @@
 layout: default
 ---
 
-<!-- Page Header -->
-{% if page.background %}
-<header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
+{% if page.white_menu %}
+ {% if page.header_style == 'two' %}
+   {% include header.html extra_class="transparent  nav-uppercase" logo_class="logo" container_class="container"%}
   {% else %}
-  <header class="masthead">
-    {% endif %}
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="page-heading">
-            <h1>{{ page.title }}</h1>
-            {% if page.description %}
-            <span class="subheading">{{ page.description }}</span>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+  {% include header.html extra_class="absolute transparent inverse-text nav-uppercase" light_logo="true"  container_class="container"%}
+ {% endif %}
+ {% if page.header_style == 'one' %}
+ {% include header.html extra_class="absolute transparent inverse-text nav-uppercase" light_logo="true"  container_class="container"%}
+ {% endif %}
+{% elsif page.black_menu %}
+  {% if page.header_style == 'one' %}
+    {% include header.html extra_class="transparent navbar-hover-opacity nav-uppercase" logo_class="logo" container_class="container" %}
+  {% elsif page.header_style == 'two' %}
+    {% include header.html extra_class="absolute transparent" logo_class="logo" container_class="container" %}
+  {% elsif page.header_style == 'three' %}
+    {% include header.html extra_class="transparent" logo_class="logo" container_class="container" alignment_class="ml-auto" %}
+  {% else %}
+    {% include header.html extra_class="transparent" logo_class="logo" container_class="container" %}
+{% endif %}
+{% endif %}
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+{% include pages/page_header.html %}
 
-        {{ content }}
+{{content}}
 
-      </div>
-    </div>
-  </div>
+{% include footer_2.html light_logo="true" %}
