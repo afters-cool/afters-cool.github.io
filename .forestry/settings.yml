@@ -7,7 +7,6 @@ sections:
 - type: document
   path: _data/navigation.yml
   label: Navigation Menu
-  match: "**/*"
 - type: document
   path: _data/general_settings.yml
   label: General Settings
