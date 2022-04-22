@@ -99,6 +99,8 @@
             {% endif %}
           </ul>
         </li>
+        {% when "justlink" %}
+        <li class="nav-item"><a class="nav-link scroll" href="{{menu.url}}">{{menu.text}}</a></li>
         {% else %}
         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="{{menu.url}}">{{menu.text}}</a>
           <ul class="dropdown-menu">

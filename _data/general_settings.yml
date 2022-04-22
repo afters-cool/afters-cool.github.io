@@ -3,99 +3,100 @@ title: 'Afterscool '
 email: jay@afterscool.ai
 email_2: ''
 description: Description for afterscool...
-black_logo_1x: "/assets/images/logo.png"
-black_logo_2x: "/assets/images/logo@2x.png"
-light_logo_1x: "/assets/images/logo-light.png"
-light_logo_2x: "/assets/images/logo-light@2x.png"
-address_01: 50, Convensia-daero  <br>252beon-gil, Yeonsu-gu,<br /> Incheon, Republic
-  of Korea
-phone_number: "+00 (123) 456 78 90"
-copyright_text: "© 2021 Afterscool. All rights reserved."
+black_logo_1x: '/assets/images/logo.png'
+black_logo_2x: '/assets/images/logo@2x.png'
+light_logo_1x: '/assets/images/logo-light.png'
+light_logo_2x: '/assets/images/logo-light@2x.png'
+address_01: 50, Convensia-daero  <br>252 beon-gil, Yeonsu-gu,<br /> Incheon, Republic of Korea
+phone_number: '+00 (123) 456 78 90'
+copyright_text: '© 2021 Afterscool. All rights reserved.'
 google_analytics:
-  enable: false
-  key: UA-664136761-1
-google_map: <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.027988040072!2d126.64192411590017!3d37.38917037983147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca26050075ca7%3A0x387f7facb43e0e1d!2sPosco%20International!5e0!3m2!1sen!2snz!4v1650344818788!5m2!1sen!2snz"
-  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    enable: false
+    key: UA-664136761-1
+google_map:
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.027988040072!2d126.64192411590017!3d37.38917037983147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca26050075ca7%3A0x387f7facb43e0e1d!2sPosco%20International!5e0!3m2!1sen!2snz!4v1650344818788!5m2!1sen!2snz"
+    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 social_accounts:
-  title: Follow Us
-  links:
-  - url: "#"
-    icon: jam jam-twitter
-  - url: "#"
-    icon: jam jam-facebook
-  - url: "#"
-    icon: jam jam-instagram
-  - url: "#"
-    icon: jam jam-vimeo
-  - url: "#"
-    icon: jam jam-youtube
+    title: Follow Us
+    links:
+        - url: '#'
+          icon: jam jam-twitter
+        - url: '#'
+          icon: jam jam-facebook
+        - url: '#'
+          icon: jam jam-instagram
+        - url: '#'
+          icon: jam jam-vimeo
+        - url: '#'
+          icon: jam jam-youtube
 external_links:
-  title: Learn More
-  links:
-  - url: "#"
-    text: About Us
-  - url: "#"
-    text: Our Story
-  - url: "#"
-    text: Projects
-  - url: "#"
-    text: Pricing
-  - url: "#"
-    text: Features
+    title: Learn More
+    links:
+        - url: '#'
+          text: About Us
+        - url: '#'
+          text: Our Story
+        - url: '#'
+          text: Projects
+        - url: '#'
+          text: Pricing
+        - url: '#'
+          text: Features
 external_links_02:
-  title: Need Help?
-  links:
-  - url: "#"
-    text: Support
-  - url: "#"
-    text: Get Started
-  - url: "#"
-    text: Contact Us
-  - url: "#"
-    text: Terms of Use
-  - url: "#"
-    text: Privacy Policy
+    title: Need Help?
+    links:
+        - url: '#'
+          text: Support
+        - url: '#'
+          text: Get Started
+        - url: '#'
+          text: Contact Us
+        - url: '#'
+          text: Terms of Use
+        - url: '#'
+          text: Privacy Policy
 external_links_03:
-  title: Company
-  links:
-  - url: "#"
-    text: Our Team
-  - url: "#"
-    text: Strategy
-  - url: "#"
-    text: Service
-  - url: "#"
-    text: Mission
-  - url: "#"
-    text: Process
+    title: Company
+    links:
+        - url: '#'
+          text: Our Team
+        - url: '#'
+          text: Strategy
+        - url: '#'
+          text: Service
+        - url: '#'
+          text: Mission
+        - url: '#'
+          text: Process
 footer_newsletter:
-  title: Our Newsletter
-  sub_title: Subscribe to our newsletter to get our news & deals delivered to your
-    inbox!
-  subscribe_button_text: Join
+    title: Our Newsletter
+    sub_title:
+        Subscribe to our newsletter to get our news & deals delivered to your
+        inbox!
+    subscribe_button_text: Join
 one_page_nav_settings:
-  links:
-  - text: Home
-    url: "#home"
-  - text: Services
-    url: "#services"
-  - text: Experiences
-    url: "#experiences"
-  - text: Portfolio
-    url: "#portfolio"
-  - text: Testimonials
-    url: "#testimonials"
-  - text: Contact
-    url: "#contact"
+    links:
+        - text: Home
+          url: '#home'
+        - text: Services
+          url: '#services'
+        - text: Experiences
+          url: '#experiences'
+        - text: Portfolio
+          url: '#portfolio'
+        - text: Testimonials
+          url: '#testimonials'
+        - text: Contact
+          url: '#contact'
 author_page_header:
-  header_background_image: "/assets/images/art/bg31.jpg"
+    header_background_image: '/assets/images/art/bg31.jpg'
 gallery:
-  images:
-  - img: "/assets/images/art/z1.svg"
-  - img: "/assets/images/art/z2.svg"
-  - img: "/assets/images/art/z3.svg"
-  - img: "/assets/images/art/z4.svg"
-  - img: "/assets/images/art/z5.svg"
-  - img: "/assets/images/art/z6.svg"
-  - img: "/assets/images/art/z7.svg"
-  - img: "/assets/images/art/z8.svg"
+    images:
+        - img: '/assets/images/art/z1.svg'
+        - img: '/assets/images/art/z2.svg'
+        - img: '/assets/images/art/z3.svg'
+        - img: '/assets/images/art/z4.svg'
+        - img: '/assets/images/art/z5.svg'
+        - img: '/assets/images/art/z6.svg'
+        - img: '/assets/images/art/z7.svg'
+        - img: '/assets/images/art/z8.svg'
